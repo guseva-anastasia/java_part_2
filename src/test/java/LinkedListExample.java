@@ -1,17 +1,17 @@
 import java.util.LinkedList;
 
 public class LinkedListExample {
-    private LinkedList<Double> items = new LinkedList<>();
+    private LinkedList<String> items = new LinkedList<>();
 
-    public void addItem(double item) {
+    public void addItem(String item) {
         items.add(item);
     }
 
-    public boolean removeItem(double item) {
-        return items.removeFirstOccurrence(item);
+    public void removeItem(String item) {
+        items.remove(item);
     }
 
-    public boolean searchItem (double searchItem) {
+    public boolean searchItem (String searchItem) {
         int index = 0;
         while (index < items.size()) {
             if (items.get(index) == searchItem) {
