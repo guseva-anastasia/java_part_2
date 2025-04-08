@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class LinkedListExample {
     private LinkedList<String> items = new LinkedList<>();
@@ -12,13 +13,12 @@ public class LinkedListExample {
     }
 
     public boolean searchItem (String searchItem) {
-        int index = 0;
-        while (index < items.size()) {
-            if (items.get(index) == searchItem) {
+        ListIterator<String> iterator = items.listIterator();
+        do {
+            if (iterator.next().equals(searchItem)) {
                 return true;
             }
-            index++;
-        }
+        } while (iterator.hasNext());
         return false;
     }
 
